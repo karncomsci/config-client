@@ -13,8 +13,11 @@ public class MessageResource {
     @Value("${message: Default Hello}")
     private String message;
 
+    @Value("${cost.value}")
+    private int value;
+
     @GetMapping("/message")
     public String message(){
-        return message;
+        return String.valueOf(value);
     }
 }
